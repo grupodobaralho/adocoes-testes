@@ -1,5 +1,6 @@
 package action;
 
+import appobjects.MenorDetalherObj;
 import appobjects.VerticalListObj;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -13,10 +14,12 @@ public class VerticalListAction {
 
     private AppiumDriver<MobileElement> driver;
     private VerticalListObj verticalListObj;
+    private MenorDetalherObj menorDetalhe;
 
     public VerticalListAction(AppiumDriver<MobileElement> driver){
         this.verticalListObj = new VerticalListObj(driver);
         this.driver = driver;
+        this.menorDetalhe = new MenorDetalherObj(driver);
     }
 
     public void favoritarMenor() {
@@ -30,6 +33,18 @@ public class VerticalListAction {
     public String checkTitulo() {
         return verticalListObj.listagemTitulo.getText();
     }
+    
+    public String checkMenorNome() {
+        return menorDetalhe.menorNome.getText();
+    }
+    
+    public void changeScreen() {
+    	verticalListObj.changeScreen.click();
+    }
+
+	public String checkMenorNomeHorizontal() {
+		return menorDetalhe.menorNomeHorizontal.getText();
+	}
 
 
     /**

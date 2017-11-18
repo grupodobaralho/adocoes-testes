@@ -1,4 +1,4 @@
-package verticalList;
+package Favorite;
 
 import action.LoginAction;
 import action.TermosAction;
@@ -9,6 +9,8 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import junit.framework.Assert;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.File;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -16,7 +18,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 
-public class OpenListaVertical {
+public class FavoriteTest {
 
     private AppiumDriver<MobileElement> driver;
     private AndroidDriver<MobileElement> driverAndroid;
@@ -46,7 +48,7 @@ public class OpenListaVertical {
 
     @Test
     public void testMenorSelect() throws InterruptedException {
-    	VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
+        VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
         verticalListDriver.entrarDetalhesMenores();
         String NomeTest = verticalListDriver.checkMenorNome();
         driverAndroid.navigate().back();

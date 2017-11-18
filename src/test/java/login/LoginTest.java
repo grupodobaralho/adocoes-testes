@@ -4,6 +4,7 @@ import action.LoginAction;
 import action.TermosAction;
 import action.VerticalListAction;
 import resources.ConfigAppium;
+import verticalList.OpenListaVertical;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -25,10 +26,10 @@ public class LoginTest {
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
-        String device_ID = "Nexus_5X_API_26_x86";
+        String device_ID = "Samsung SM-G920I";//"Nexus_5X_API_26_x86";
         String AppiumServerURL = "http://127.0.0.1:4723/wd/hub";
 
-        String apkPath = "/home/lima/Documents/AGES/app-debug.apk";
+        String apkPath = "C:\\Users\\16111210\\Desktop\\adocoes-android\\adocoes-android\\app\\build\\outputs\\apk\\debug\\app-debug.apk";//"/home/lima/Documents/AGES/app-debug.apk";
         File ioApp = new File(apkPath);
         String appName = ioApp.getAbsolutePath();
         String deviceType = "Android";
@@ -60,6 +61,13 @@ public class LoginTest {
         loginDriver.entrarComLogin();
         termosDriver.aceitarTermos();
         Assert.assertEquals("Crianças e Adolescentes", verticalListDriver.checkTitulo());
+    }
+    
+    @Test
+    public void nextMethod() throws InterruptedException {
+    	OpenListaVertical OLV = new OpenListaVertical();
+    	OLV.testMenorSelect();
+
     }
     
     //@Test Login depois que os termos pararem de aparecer

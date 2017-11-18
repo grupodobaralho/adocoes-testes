@@ -24,4 +24,7 @@ public class VerticalListObj {
     
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Crianças e Adolescentes']")
     public MobileElement listagemTitulo;
+    
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Crianças e Adolescentes']")
+    public MobileElement changeScreen;
 }

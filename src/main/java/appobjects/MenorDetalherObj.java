@@ -30,4 +30,10 @@ public class MenorDetalherObj {
 
     @AndroidFindBy(id="br.pucrs.ages.adocoes:id/menor_details_layout")
     public MobileElement telaMenorDetalhes;
+    
+    @AndroidFindBy(id="br.pucrs.ages.adocoes:id/nome_text_view")
+    public MobileElement menorNome;
+
+	@AndroidFindBy(id="br.pucrs.ages.adocoes:id/tv_nome")
+    public MobileElement menorNomeHorizontal;
 }
