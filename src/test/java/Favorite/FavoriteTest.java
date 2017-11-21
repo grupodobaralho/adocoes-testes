@@ -39,15 +39,24 @@ public class FavoriteTest {
         configAppium = new ConfigAppium(device_ID, deviceType, appName);
         this.driverAndroid = new AndroidDriver<MobileElement>(new URL(AppiumServerURL), configAppium.getCap());
         
+    }
+
+    @Test
+    public void testfavoritarSemLogin() throws InterruptedException {
         LoginAction loginDriver = new LoginAction(driverAndroid);
         loginDriver.entrarSemLogin();
         
         TermosAction termosDriver = new TermosAction(driverAndroid);
         termosDriver.aceitarTermos();
-    }
-
-    @Test
-    public void testMenorSelect() throws InterruptedException {
+        
+        VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
+        
+        verticalListDriver.entrarDetalhesMenores();
+        String NomeTest = verticalListDriver.checkMenorNome();
+        driverAndroid.navigate().back();
+        verticalListDriver.favoritarMenor();
+        
+        
         
     }
 }
