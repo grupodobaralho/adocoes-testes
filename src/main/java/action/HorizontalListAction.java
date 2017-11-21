@@ -30,12 +30,8 @@ public class HorizontalListAction {
         verticalListObj.itemMenor.click();
     }
     
-    public String checkName() {
-    	return menorDetalhes.nomeMenor.getText();
-    }
-    
-    public void voltaDetalhes() {
-    	menorDetalhes.returnButton.click();
+    public String checkMenorNomeHorizontal() {
+    	return menorDetalhes.menorNomeHorizontal.getText();
     }
     
 }

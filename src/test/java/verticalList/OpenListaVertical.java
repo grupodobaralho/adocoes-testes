@@ -1,5 +1,6 @@
 package verticalList;
 
+import action.HorizontalListAction;
 import action.LoginAction;
 import action.TermosAction;
 import action.VerticalListAction;
@@ -51,7 +52,8 @@ public class OpenListaVertical {
         String NomeTest = verticalListDriver.checkMenorNome();
         driverAndroid.navigate().back();
         verticalListDriver.changeScreen();
-        String nomeTest2 = verticalListDriver.checkMenorNomeHorizontal();
+        HorizontalListAction horizontalListDriver = new HorizontalListAction(driverAndroid);
+        String nomeTest2 = horizontalListDriver.checkMenorNomeHorizontal();
         Assert.assertEquals(NomeTest.toUpperCase(), nomeTest2.toUpperCase());
     }
 }

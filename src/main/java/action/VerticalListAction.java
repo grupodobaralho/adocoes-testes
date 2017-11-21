@@ -42,10 +42,6 @@ public class VerticalListAction {
     	verticalListObj.changeScreen.click();
     }
 
-	public String checkMenorNomeHorizontal() {
-		return menorDetalhe.menorNomeHorizontal.getText();
-	}
-
 
     /**
      * Método para baixar o teclado nativo do Android. Será realocado para outra

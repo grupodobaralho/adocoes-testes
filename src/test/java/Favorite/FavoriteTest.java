@@ -48,12 +48,6 @@ public class FavoriteTest {
 
     @Test
     public void testMenorSelect() throws InterruptedException {
-        VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
-        verticalListDriver.entrarDetalhesMenores();
-        String NomeTest = verticalListDriver.checkMenorNome();
-        driverAndroid.navigate().back();
-        verticalListDriver.changeScreen();
-        String nomeTest2 = verticalListDriver.checkMenorNomeHorizontal();
-        Assert.assertEquals(NomeTest.toUpperCase(), nomeTest2.toUpperCase());
+        
     }
 }

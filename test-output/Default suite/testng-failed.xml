@@ -3,14 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="login.LoginTest">
+      <class name="verticalList.OpenListaVertical">
         <methods>
-          <include name="nextMethod"/>
           <include name="setUp"/>
-          <include name="resetApp"/>
-          <include name="testEntrarComLogin_ComTermos"/>
+          <include name="testMenorSelect"/>
         </methods>
-      </class> <!-- login.LoginTest -->
+      </class> <!-- verticalList.OpenListaVertical -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
