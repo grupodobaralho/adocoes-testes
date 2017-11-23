@@ -42,6 +42,11 @@ public class VerticalListAction {
     	verticalListObj.changeScreen.click();
     }
 
+	public void abreMenu() {
+		verticalListObj.abreMenu.click();
+		
+	}
+
 
     /**
      * Método para baixar o teclado nativo do Android. Será realocado para outra

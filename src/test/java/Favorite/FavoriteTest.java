@@ -1,6 +1,8 @@
 package Favorite;
 
+import action.FavoritesAction;
 import action.LoginAction;
+import action.MenuAction;
 import action.TermosAction;
 import action.VerticalListAction;
 import resources.ConfigAppium;
@@ -50,13 +52,28 @@ public class FavoriteTest {
         termosDriver.aceitarTermos();
         
         VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
+        MenuAction Menu = new MenuAction(driverAndroid);
+        FavoritesAction Favoritos = new FavoritesAction(driverAndroid);
         
-        verticalListDriver.entrarDetalhesMenores();
-        String NomeTest = verticalListDriver.checkMenorNome();
-        driverAndroid.navigate().back();
+        /* Para aumentar a precisao do teste, e necessario limpar a lista de favoritos antes, esqueleto abaixo
+        verticalListDriver.abreMenu();
+        Menu.entrarListaInteresses();
+        Assert.assertEquals(null, Favoritos.checkMenorExist());
+        verticalListDriver.abreMenu();
+        Menu.entrarListaMenores();*/
         verticalListDriver.favoritarMenor();
+        verticalListDriver.entrarDetalhesMenores();
+        String nomeTest1 = verticalListDriver.checkMenorNome();
+        driverAndroid.navigate().back();
         
+        verticalListDriver.abreMenu();
+        Menu.entrarListaInteresses();
+        String nomeTest2 = Favoritos.checkMenorNome();
+        Assert.assertEquals(nomeTest1.toUpperCase(), nomeTest2.toUpperCase());
         
+        //comando para desfazer a alteracao feita, visto que acoes nas listagem de favortiso e permanente
+        Favoritos.desfavoritarMenor();
+        Favoritos.desfavotitarMenorConfirm();
         
     }
 }

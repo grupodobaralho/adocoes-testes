@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="85035" started-at="2017-11-21T00:09:08Z" finished-at="2017-11-21T00:10:34Z">
+  <suite name="Default suite" duration-ms="60653" started-at="2017-11-23T00:02:22Z" finished-at="2017-11-23T00:03:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="85035" started-at="2017-11-21T00:09:08Z" finished-at="2017-11-21T00:10:34Z">
-      <class name="verticalList.OpenListaVertical">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:verticalList.OpenListaVertical@31a5c39e]" name="setUp" is-config="true" duration-ms="79370" started-at="2017-11-20T22:09:08Z" finished-at="2017-11-20T22:10:28Z">
+    <test name="Default test" duration-ms="60653" started-at="2017-11-23T00:02:22Z" finished-at="2017-11-23T00:03:23Z">
+      <class name="Favorite.FavoriteTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:Favorite.FavoriteTest@31a5c39e]" name="setUp" is-config="true" duration-ms="42980" started-at="2017-11-22T22:02:22Z" finished-at="2017-11-22T22:03:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testMenorSelect()[pri:0, instance:verticalList.OpenListaVertical@31a5c39e]" name="testMenorSelect" duration-ms="5640" started-at="2017-11-20T22:10:28Z" finished-at="2017-11-20T22:10:34Z">
+        <test-method status="PASS" signature="testfavoritarSemLogin()[pri:0, instance:Favorite.FavoriteTest@31a5c39e]" name="testfavoritarSemLogin" duration-ms="17644" started-at="2017-11-22T22:03:05Z" finished-at="2017-11-22T22:03:23Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMenorSelect -->
-      </class> <!-- verticalList.OpenListaVertical -->
+        </test-method> <!-- testfavoritarSemLogin -->
+      </class> <!-- Favorite.FavoriteTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

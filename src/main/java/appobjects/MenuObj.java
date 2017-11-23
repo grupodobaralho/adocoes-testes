@@ -19,7 +19,8 @@ public class MenuObj {
     @AndroidFindBy(xpath = "//android.widget.CheckedTextView[@text='Crianças e Adolescentes']")
     public MobileElement menuListaMenores;
     
-    @AndroidFindBy(xpath = "//android.widget.CheckedTextView[@text='Listagem de Interesses']")
+    @AndroidFindBy(xpath = "//android.widget.CheckedTextView[@text='Lista de Interesses']")
+     
     public MobileElement menuListaFavoritos;
     
     @AndroidFindBy(xpath = "//android.widget.CheckedTextView[@text='Novidades']")

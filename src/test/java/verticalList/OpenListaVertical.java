@@ -49,11 +49,11 @@ public class OpenListaVertical {
     public void testMenorSelect() throws InterruptedException {
     	VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
         verticalListDriver.entrarDetalhesMenores();
-        String NomeTest = verticalListDriver.checkMenorNome();
+        String nomeTest = verticalListDriver.checkMenorNome();
         driverAndroid.navigate().back();
         verticalListDriver.changeScreen();
         HorizontalListAction horizontalListDriver = new HorizontalListAction(driverAndroid);
         String nomeTest2 = horizontalListDriver.checkMenorNomeHorizontal();
-        Assert.assertEquals(NomeTest.toUpperCase(), nomeTest2.toUpperCase());
+        Assert.assertEquals(nomeTest.toUpperCase(), nomeTest2.toUpperCase());
     }
 }

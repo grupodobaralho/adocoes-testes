@@ -27,4 +27,7 @@ public class VerticalListObj {
     
     @AndroidFindBy(id = "br.pucrs.ages.adocoes:id/troca_para_horizontal")
     public MobileElement changeScreen;
+
+	@AndroidFindBy(xpath = "//android.widget.ImageButton")
+    public MobileElement abreMenu;
 }
