@@ -1,4 +1,4 @@
-package Favorite;
+package favorites;
 
 import action.FavoritesAction;
 import action.LoginAction;
@@ -17,7 +17,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 
-public class FavoriteTest {
+public class FavoritesTest {
 
     private AndroidDriver<MobileElement> driverAndroid;
     private ConfigAppium configAppium;
