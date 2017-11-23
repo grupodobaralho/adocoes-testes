@@ -6,9 +6,15 @@
         <parameter name="tipoDevice" value="Android"/>
         <parameter name="appName" value="/home/lima/Documents/AGES/app-debug.apk"/>
         <classes>
-            <class name="login.loginTest"/>
+            <class name="login.LoginTest"/>
             <methods>
-                <include name="testEntrarSemLogin" />
+                <include name="testEntrarSemLogin_ComTermos" />
+                <include name="testEntrarComLogin_ComTermos" />
+            </methods>
+            <class name="verticalList.OpenListaVertical"/>
+            <methods>
+                <include name="testMenorSelect" />
+                <include name="testEntrarComLogin_ComTermos" />
             </methods>
         </classes>
     </test>
