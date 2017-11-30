@@ -21,7 +21,7 @@ public class LoginAction {
     public void entrarComLogin() {
         loginObj.campoEmailLogin.sendKeys("interessado01@adocoes.ages.pucrs.br");
         loginObj.campoSenhaLogin.sendKeys("a123456");
-        driver.hideKeyboard();
+        //driver.hideKeyboard();
         loginObj.botaoEntrarComLogin.click();
     }
     

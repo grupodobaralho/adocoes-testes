@@ -16,38 +16,32 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-
 public class OpenListaVertical {
 
-    private AndroidDriver<MobileElement> driverAndroid;
-    private ConfigAppium configAppium;
-    
-    @BeforeTest
-    public void setUp() throws MalformedURLException {
-        String AppiumServerURL = "http://127.0.0.1:4723/wd/hub";
+	private AndroidDriver<MobileElement> driverAndroid;
 
-        configAppium = new ConfigAppium();
-        this.driverAndroid = new AndroidDriver<MobileElement>(new URL(AppiumServerURL), configAppium.getCap());
-        
-        LoginAction loginDriver = new LoginAction(driverAndroid);
-        loginDriver.entrarSemLogin();
-        
-        TermosAction termosDriver = new TermosAction(driverAndroid);
-        termosDriver.aceitarTermos();
-    }
+	public OpenListaVertical(AndroidDriver<MobileElement> driverAndroid) throws InterruptedException {
+		this.driverAndroid = driverAndroid;
+		testMenorSelect();
+	}
 
-    @Test
-    public void testMenorSelect() throws InterruptedException {
-    	VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
-        HorizontalListAction horizontalListDriver = new HorizontalListAction(driverAndroid);
-        
-        verticalListDriver.entrarDetalhesMenores();
-        String nomeNaListaVertical = verticalListDriver.checkMenorNome();
-        
-        driverAndroid.navigate().back();
-        verticalListDriver.changeScreen();
-        
-        String nomeNaListaHorizontal = horizontalListDriver.checkMenorNomeHorizontal();
-        Assert.assertEquals(nomeNaListaVertical.toUpperCase(), nomeNaListaHorizontal.toUpperCase());
-    }
+	@Test
+	public void testMenorSelect() throws InterruptedException {
+		LoginAction loginDriver = new LoginAction(driverAndroid);
+		loginDriver.entrarSemLogin();
+
+		TermosAction termosDriver = new TermosAction(driverAndroid);
+		termosDriver.aceitarTermos();
+		VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
+		HorizontalListAction horizontalListDriver = new HorizontalListAction(driverAndroid);
+
+		verticalListDriver.entrarDetalhesMenores();
+		String nomeNaListaVertical = verticalListDriver.checkMenorNome();
+
+		driverAndroid.navigate().back();
+		verticalListDriver.changeScreen();
+
+		String nomeNaListaHorizontal = horizontalListDriver.checkMenorNomeHorizontal();
+		Assert.assertEquals(nomeNaListaVertical.toUpperCase(), nomeNaListaHorizontal.toUpperCase());
+	}
 }

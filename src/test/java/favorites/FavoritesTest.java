@@ -16,51 +16,48 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-
 public class FavoritesTest {
 
-    private AndroidDriver<MobileElement> driverAndroid;
-    private ConfigAppium configAppium;
-    
-    @BeforeTest
-    public void setUp() throws MalformedURLException {
-        String AppiumServerURL = "http://127.0.0.1:4723/wd/hub";
+	private AndroidDriver<MobileElement> driverAndroid;
 
-        configAppium = new ConfigAppium();
-        this.driverAndroid = new AndroidDriver<MobileElement>(new URL(AppiumServerURL), configAppium.getCap());        
-    }
+	public FavoritesTest(AndroidDriver<MobileElement>driverAndroid) throws InterruptedException {
+		this.driverAndroid = driverAndroid;
+		testfavoritarSemLogin();
+	}
 
-    @Test
-    public void testfavoritarSemLogin() throws InterruptedException {
-        LoginAction loginDriver = new LoginAction(driverAndroid);
-        loginDriver.entrarSemLogin();
-        
-        TermosAction termosDriver = new TermosAction(driverAndroid);
-        termosDriver.aceitarTermos();
-        
-        VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
-        MenuAction Menu = new MenuAction(driverAndroid);
-        FavoritesAction Favoritos = new FavoritesAction(driverAndroid);
-        
-        /* Para aumentar a precisao do teste, e necessario limpar a lista de favoritos antes, esqueleto abaixo
-        verticalListDriver.abreMenu();
-        Menu.entrarListaInteresses();
-        Assert.assertEquals(null, Favoritos.checkMenorExist());
-        verticalListDriver.abreMenu();
-        Menu.entrarListaMenores();*/
-        verticalListDriver.favoritarMenor();
-        verticalListDriver.entrarDetalhesMenores();
-        String nomeTest1 = verticalListDriver.checkMenorNome();
-        driverAndroid.navigate().back();
-        
-        verticalListDriver.abreMenu();
-        Menu.entrarListaInteresses();
-        String nomeTest2 = Favoritos.checkMenorNome();
-        Assert.assertEquals(nomeTest1.toUpperCase(), nomeTest2.toUpperCase());
-        
-        //comando para desfazer a alteracao feita, visto que acoes nas listagem de favortiso e permanente
-        Favoritos.desfavoritarMenor();
-        Favoritos.desfavotitarMenorConfirm();
-        
-    }
+	@Test
+	public void testfavoritarSemLogin() throws InterruptedException {
+		LoginAction loginDriver = new LoginAction(driverAndroid);
+		loginDriver.entrarSemLogin();
+
+		TermosAction termosDriver = new TermosAction(driverAndroid);
+		termosDriver.aceitarTermos();
+
+		VerticalListAction verticalListDriver = new VerticalListAction(driverAndroid);
+		MenuAction Menu = new MenuAction(driverAndroid);
+		FavoritesAction Favoritos = new FavoritesAction(driverAndroid);
+
+		/*
+		 * Para aumentar a precisao do teste, e necessario limpar a lista de favoritos
+		 * antes, esqueleto abaixo verticalListDriver.abreMenu();
+		 * Menu.entrarListaInteresses(); Assert.assertEquals(null,
+		 * Favoritos.checkMenorExist()); verticalListDriver.abreMenu();
+		 * Menu.entrarListaMenores();
+		 */
+		verticalListDriver.favoritarMenor();
+		verticalListDriver.entrarDetalhesMenores();
+		String nomeTest1 = verticalListDriver.checkMenorNome();
+		driverAndroid.navigate().back();
+
+		verticalListDriver.abreMenu();
+		Menu.entrarListaInteresses();
+		String nomeTest2 = Favoritos.checkMenorNome();
+		Assert.assertEquals(nomeTest1.toUpperCase(), nomeTest2.toUpperCase());
+
+		// comando para desfazer a alteracao feita, visto que acoes nas listagem de
+		// favortiso e permanente
+		Favoritos.desfavoritarMenor();
+		Favoritos.desfavotitarMenorConfirm();
+
+	}
 }

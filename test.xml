@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="AdocoesAppTest" parallel="false">
     <test name="AVD1">
-        <parameter name="DEVICE_ID" value="0015326804" />
+        <!-- <parameter name="DEVICE_ID" value="0015326804" />
         <parameter name="AppiumServerURL" value= "http://localhost:4723/wd/hub" />
         <parameter name="tipoDevice" value="Android"/>
-        <parameter name="appName" value="/home/lima/Documents/AGES/app-debug.apk"/>
+        <parameter name="appName" value="/home/lima/Documents/AGES/app-debug.apk"/> -->
         <classes>
-            <class name="login.LoginTest"/>
+            <class name="Main.Main"/>
             <methods>
-                <include name="testEntrarSemLogin_ComTermos" />
-                <include name="testEntrarComLogin_ComTermos" />
-            </methods>
-            <class name="verticalList.OpenListaVertical"/>
-            <methods>
-                <include name="testMenorSelect" />
-                <include name="testEntrarComLogin_ComTermos" />
+                <include name="testLogin" />
+                <include name="testList" />
+                <include name="testFavoritos" />
             </methods>
         </classes>
     </test>
