@@ -13,37 +13,37 @@ import org.testng.annotations.AfterMethod;
 
 public class Main {
 
-	private AndroidDriver<MobileElement> driverAndroid;
-	private ConfigAppium configAppium;
-	// Android Emulator - Nexus_5X_API_26_x86:5554
-	// @Parameters({"DEVICE_ID", "AppiumServerURL", "DeviceType", "appName"})
+    private AndroidDriver<MobileElement> driverAndroid;
+    private ConfigAppium configAppium;
+    // Android Emulator - Nexus_5X_API_26_x86:5554
+    // @Parameters({"DEVICE_ID", "AppiumServerURL", "DeviceType", "appName"})
 
-	@BeforeTest
-	public void setUp() throws MalformedURLException {
-		configAppium = new ConfigAppium();
-		configAppium.configAppium();
-		configAppium.configAndroidDriver();
-		this.driverAndroid = configAppium.getAndroidDriver();
-	}
+    @BeforeTest
+    public void setUp() throws MalformedURLException {
+        configAppium = new ConfigAppium();
+        configAppium.configAppium();
+        configAppium.configAndroidDriver();
+        this.driverAndroid = configAppium.getAndroidDriver();
+    }
 
-	@AfterMethod
-	public void resetApp() {
-		driverAndroid.resetApp();
-	}
+    @AfterMethod
+    public void resetApp() {
+        driverAndroid.resetApp();
+    }
 
-	@Test
-	public void testLogin() throws InterruptedException {
-		LoginTest testLogin = new LoginTest(driverAndroid);
-	}
+    @Test
+    public void testLogin() throws InterruptedException {
+        LoginTest testLogin = new LoginTest(driverAndroid);
+    }
 
-	@Test
-	public void testList() throws InterruptedException {
-		OpenListaVertical listTest = new OpenListaVertical(driverAndroid);
-	}
-	
-	@Test
-	public void testFavoritos() throws InterruptedException {
-		FavoritesTest testFavorites = new FavoritesTest(driverAndroid);
-	}
+    @Test
+    public void testList() throws InterruptedException {
+        OpenListaVertical listTest = new OpenListaVertical(driverAndroid);
+    }
+
+    @Test
+    public void testFavoritos() throws InterruptedException {
+        FavoritesTest testFavorites = new FavoritesTest(driverAndroid);
+    }
 
 }

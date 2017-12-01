@@ -4,17 +4,11 @@ import action.HorizontalListAction;
 import action.LoginAction;
 import action.TermosAction;
 import action.VerticalListAction;
-import resources.ConfigAppium;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import junit.framework.Assert;
 
-import java.io.File;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class OpenListaVertical {
 
