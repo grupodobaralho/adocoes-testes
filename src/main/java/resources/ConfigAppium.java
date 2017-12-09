@@ -22,12 +22,13 @@ public class ConfigAppium {
 	}
 
 	public void configAppium() {
+		// Nome relativo ao celular ou emulador que ira executar o aplicativo
 		String deviceName = "Samsung SM-G920I";
-		// "Nexus_5X_API_26_x86";
+		// Indica se eh aplicativo Android ou iOS (apenas testado com Android)
 		String deviceType = "Android";
 
-		String apkPath = "C:\\Users\\16111210\\Desktop\\adocoes-android\\adocoes-android\\app\\build\\outputs\\apk\\debug\\app-debug.apk";
-		// "/home/lima/Documents/AGES/app-debug.apk";
+		// Caminho que leva ate a APK do aplicativo
+		String apkPath = "";
 		File ioApp = new File(apkPath);
 		String appPath = ioApp.getAbsolutePath();
 
@@ -49,8 +50,7 @@ public class ConfigAppium {
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
 		cap.setCapability(MobileCapabilityType.APP, appPath);
 
-		// encontrado o problema
-		// o appium nao conseguia encontrar a primeira activity
+		// Caso o appium nao consiga encontrar a primeira activity
 		cap.setCapability(AndroidMobileCapabilityType.APP_WAIT_ACTIVITY, "br.pucrs.ages.adocoes.*");
 
 	}
